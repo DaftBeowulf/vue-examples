@@ -10,21 +10,15 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>Dynamic CSS</h1>
-      <h2>Example 1</h2>
-      <!-- <div
-        v-on:click="available= !available"
-        v-bind:class="{available:available}"
-      >
-        <span>Ryu</span>
-      </div> -->
-      <h2>Example 2</h2>
-      <button @click="nearby=!nearby">Toggle nearby</button>
-      <button @click="available=!available">Toggle available</button>
-
-      <div v-bind:class="compClasses">
-        <span>Ryu</span>
-      </div>
+      <h1>Conditionals</h1>
+      <button v-on:click="error=!error">Toggle Error</button>
+      <button v-on:click="success=!success">Toggle Success</button>
+      <!-- <p v-if="error">Error!</p>
+      <p v-else-if="success">Success!</p> -->
+      <!-- ^^removes from DOM completely if false -->
+      <!-- vv just adds "display=none" if false -->
+      <p v-show="error">Error!</p>
+      <p v-show="success">Success!</p>
     </div>
     <script src="app.js"></script>
   </body>
