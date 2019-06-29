@@ -10,15 +10,25 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>Conditionals</h1>
-      <button v-on:click="error=!error">Toggle Error</button>
-      <button v-on:click="success=!success">Toggle Success</button>
-      <!-- <p v-if="error">Error!</p>
-      <p v-else-if="success">Success!</p> -->
-      <!-- ^^removes from DOM completely if false -->
-      <!-- vv just adds "display=none" if false -->
-      <p v-show="error">Error!</p>
-      <p v-show="success">Success!</p>
+      <h1>Looping through lists</h1>
+      <ul>
+        <li v-for="item in characters">{{ item }}</li>
+      </ul>
+      <ul>
+        <li v-for="(ninja, i) in ninjas">
+          {{ i }}. {{ ninja.name }} - {{ ninja.age }}
+        </li>
+      </ul>
+      <!-- vv template instead of <div> since template doesn't render to the DOM, Vue just reads its rules -->
+      <template v-for="(ninja, i) in ninjas">
+        <h3>{{ i }}. {{ ninja.name }}</h3>
+        <p>{{ ninja.age }}</p>
+      </template>
+      <template v-for="ninja in ninjas">
+        <div v-for="(val, key) in ninja">
+          <p>{{ key }} - {{ val }}</p>
+        </div>
+      </template>
     </div>
     <script src="app.js"></script>
   </body>
