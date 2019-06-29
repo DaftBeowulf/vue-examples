@@ -10,14 +10,13 @@
   </head>
   <body>
     <div id="vue-app">
-      <h1>{{ greet("afternoon") }}</h1>
+      <!-- <h1>{{ greet("afternoon") }}</h1>
       <h1>Name: {{ name }}</h1>
       <p>Job: {{ job }}</p>
       <h1>Data Binding</h1>
       <a :href="website" target="_blank">My site</a>
       <input type="text" :value="name" />
       <p v-html="websiteTag"></p>
-      <h1>Events</h1>
       <button @click.once="add(1)">Add a year</button>
       <button v-on:click="subtract(1)">Subtract a year</button>
       <button @dblclick="add(10)">Add 10 years</button>
@@ -25,6 +24,19 @@
       <p>My age is: {{ age }}</p>
       <div id="canvas" v-on:mousemove="updateXY">{{ x }},{{ y }}</div>
       <div v-on:click="click">Click here and generate an alert</div>
+      <h1>Keyboard Events</h1>
+      <label>Name from 1-way Data binding:</label>
+      <input type="text" @keyup.enter="logName" />
+      <label>Age from 2-way data binding:</label>
+      <input type="text" v-model="logAge" />
+      <span>{{ logAge }}</span> -->
+      <h1>Computed Properties</h1>
+      <button @click="a++">Add to A</button>
+      <button @click="b++">Add to B</button>
+      <p>A:{{ a }}</p>
+      <p>B:{{ b }}</p>
+      <p>Age + A = {{ addToA }}</p>
+      <p>Age + B = {{ addToB }}</p>
     </div>
     <script src="app.js"></script>
   </body>
